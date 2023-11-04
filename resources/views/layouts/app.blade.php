@@ -114,15 +114,15 @@
 
                                 @auth
                                     @role('admin')
-                                        <i class="fas fa-user me-2"></i>{{Auth::user()->name}}
+                                        <i class="fas fa-user me-2"></i>&nbsp &nbsp &nbsp &nbsp &nbsp{{Auth::user()->name}}
                                     @endrole
 
                                     @role('dosen')
-                                        <i class="fas fa-user me-2"></i>{{Auth::user()->dosen->nama}}
+                                        <i class="fas fa-user me-2"></i>&nbsp &nbsp &nbsp &nbsp &nbsp{{Auth::user()->dosen->nama}}
                                     @endrole
 
                                     @role('mahasiswa')
-                                        <i class="fas fa-user me-2"></i>{{Auth::user()->name}}
+                                        <i class="fas fa-user me-2"></i>&nbsp{{Auth::user()->name}}
                                     @endrole                      
                                 @endauth
                             </a>
