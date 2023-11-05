@@ -17,7 +17,8 @@ return new class extends Migration
             //nama = nama lengkap mahasiswa
             $table->string('nama');
             $table->enum('jenis_kelamin',['L','P']);
-            $table->string('kelas');
+            $table->enum('kelas',['A','B','C','D','IC']);
+            $table->enum('semester',['1','2','3','4','5','6']);
             $table->timestamps();
         });
     }

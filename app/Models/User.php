@@ -51,4 +51,9 @@ class User extends Authenticatable implements LaratrustUser
     public function dosen(){
         return $this->hasOne('App\Models\Dosen');
     }
+
+    //user memiliki satu mahasiswa
+    public function mahasiswa(){
+        return $this->hasOne('App\Models\Mahasiswa');
+    }
 }

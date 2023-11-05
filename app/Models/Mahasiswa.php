@@ -11,4 +11,9 @@ class Mahasiswa extends Model
 
     protected $table = 'mahasiswas';
     protected $guarded = [];
+
+    //data mahasiswa dimiliki satu user
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
