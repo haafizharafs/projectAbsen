@@ -11,7 +11,7 @@
             </a>
 
             <h1>List Mahasiswa: </h1>
-            
+
             <table class="table">
                 <thead>
                     <tr>
@@ -30,34 +30,8 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$d->name}}</td>
                             <td>{{$d->mahasiswa->nama}}</td>
-                            <td>
-                                @if($d->mahasiswa->kelas == 'A')
-                                    A
-                                @elseif($d->mahasiswa->kelas == 'B')
-                                    B
-                                @elseif($d->mahasiswa->kelas == 'C')
-                                    C
-                                @elseif($d->mahasiswa->kelas == 'D')
-                                    D
-                                @else
-                                    IC
-                                @endif
-                            </td>
-                            <td>
-                                @if($d->mahasiswa->semester == '1')
-                                    1
-                                @elseif($d->mahasiswa->semester == '2')
-                                    2
-                                @elseif($d->mahasiswa->semester == '3')
-                                    3
-                                @elseif($d->mahasiswa->semester == '4')
-                                    4
-                                @elseif($d->mahasiswa->semester == '5')
-                                    5
-                                @else
-                                    6
-                                @endif
-                            </td>
+                            <td>{{$d->mahasiswa->kelas->nama}}</td>
+                            <td>{{$d->mahasiswa->semester->nama}}</td>
                             <td>
                                 @if($d->mahasiswa->jenis_kelamin == 'L')
                                     Laki - Laki

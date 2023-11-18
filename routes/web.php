@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\KelasController;
+use App\Http\Controllers\Admin\SemesterController;
+use App\Http\Controllers\Admin\JamController;
+use App\Http\Controllers\Admin\MataKuliahController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +34,7 @@ Route::get('/home',function(){
         return redirect()->route('dosen.dashboard');
     } else {
         return redirect()->route('mahasiswa.dashboard');
-    } 
+    }
 });
 
 //middleware prefix admin
@@ -64,6 +69,26 @@ Route::middleware(['auth','role:admin'])->prefix('admin')->group(function(){
     Route::get('pilih/mahasiswa/edit/{id}',[App\Http\Controllers\Admin\MahasiswaController::class, 'editMahasiswa'])->name('admin.editMahasiswa');
     //update mahasiswa
     Route::post('pilih/mahasiswa/update/{id}',[App\Http\Controllers\Admin\MahasiswaController::class, 'updateMahasiswa'])->name('admin.updateMahasiswa');
+
+    //KELAS
+    Route::get('/kelas',[KelasController::class, 'listKelas'])->name('admin.listKelas');
+    Route::post('/kelas/simpan',[KelasController::class, 'saveKelas'])->name('admin.saveKelas');
+    Route::post('/kelas/hapus{id}',[KelasController::class, 'deleteKelas'])->name('admin.deleteKelas');
+
+    //SEMESTER
+    Route::get('/semester',[SemesterController::class, 'listSemester'])->name('admin.listSemester');
+    Route::post('/semester/simpan',[SemesterController::class, 'saveSemester'])->name('admin.saveSemester');
+    Route::post('/semester/hapus{id}',[SemesterController::class, 'deleteSemester'])->name('admin.deleteSemester');
+
+    //JAM
+    Route::get('/jam',[JamController::class, 'listJam'])->name('admin.listJam');
+    Route::post('/jam/simpan',[JamController::class, 'saveJam'])->name('admin.saveJam');
+    Route::post('/jam/hapus{id}',[JamController::class, 'deleteJam'])->name('admin.deleteJam');
+
+    //MATA KULIAH
+    Route::get('/mata-kuliah',[MataKuliahController::class, 'listMataKuliah'])->name('admin.listMataKuliah');
+    Route::post('/mata-kuliah/simpan',[MataKuliahController::class, 'saveMataKuliah'])->name('admin.saveMataKuliah');
+    Route::post('/mata-kuliah/hapus{id}',[MataKuliahController::class, 'deleteMataKuliah'])->name('admin.deleteMataKuliah');
 });
 
 //middleware prefix dosen

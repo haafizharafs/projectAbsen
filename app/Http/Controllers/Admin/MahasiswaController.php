@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Mahasiswa;
+use App\Models\Kelas;
+use App\Models\Semester;
 
 class MahasiswaController extends Controller
 {
@@ -18,7 +20,9 @@ class MahasiswaController extends Controller
     }
     //return tampilan pembuatan akun mahasiswa
     public function createMahasiswa(){
-        return view('admin.mahasiswa.createMahasiswa');
+        $data['kelas'] = Kelas::all();
+        $data['semester'] = Semester::all();
+        return view('admin.mahasiswa.createMahasiswa',compact('data'));
     }
     public function saveMahasiswa(Request $request){
         //mengisi tabel user berdasarkan inputan form
@@ -32,8 +36,8 @@ class MahasiswaController extends Controller
         $mahasiswa->user_id = $user->id;
         $mahasiswa->nama = $request->nama;
         $mahasiswa->jenis_kelamin = $request->jenisKelamin;
-        $mahasiswa->kelas = $request->kelas;
-        $mahasiswa->semester = $request->semester;
+        $mahasiswa->kelas_id = $request->kelas;
+        $mahasiswa->semester_id = $request->semester;
         $mahasiswa->save();
 
         //mencari tabel user mengambil kolom name yang berisi mahasiswa
@@ -51,7 +55,9 @@ class MahasiswaController extends Controller
     }
 
     public function editMahasiswa($id){
-        $user = User::where('id', $id)->with('mahasiswa')->first();
+        $user['user'] = User::where('id', $id)->with('mahasiswa')->first();
+        $user['kelas'] = Kelas::all();
+        $user['semester'] = Semester::all();
         return view('admin.mahasiswa.editMahasiswa', compact('user'));
     }
     public function updateMahasiswa(Request $request, $id){
@@ -65,13 +71,13 @@ class MahasiswaController extends Controller
         }
         $user->save();
 
-        //mengisi tabel mahasiswa berdasarkan inputen form
+        //mengisi tabel mahasiswa berdasarkan inputan form
         $mahasiswa = Mahasiswa::where('user_id', $id)->first();
         $mahasiswa->user_id = $user->id;
         $mahasiswa->nama = $request->nama;
-        $mahasiswa->kelas = $request->kelas;
+        $mahasiswa->kelas_id = $request->kelas;
         $mahasiswa->jenis_kelamin = $request->jenisKelamin;
-        $mahasiswa->semester = $request->semester;
+        $mahasiswa->semester_id = $request->semester;
         $mahasiswa->save();
 
         return redirect()->route('admin.listMahasiswa');

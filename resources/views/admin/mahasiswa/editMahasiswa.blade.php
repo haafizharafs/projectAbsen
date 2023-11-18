@@ -6,117 +6,40 @@
         </div>
 
         <div class="card-body">
-        <form action="{{route('admin.updateMahasiswa', $user->id)}}" method="post">
+        <form action="{{route('admin.updateMahasiswa', $user['user']->id)}}" method="post">
         @csrf
             <div class="mb-3">
                 <label for="namaMahasiswa" class="form-label">Nama: </label>
-                <input type="text" class="form-control" id="namaMahasiswa" name="nama" value="{{$user->mahasiswa->nama}}">
+                <input type="text" class="form-control" id="namaMahasiswa" name="nama" value="{{$user['user']->mahasiswa->nama}}">
             </div>
 
             <div class="mb-3">
-                <label for="">Kelas: </label>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="a" value="A" @if($user->mahasiswa->kelas == 'A') checked @endif>
-                            <label class="form-check-label" for="a">
-                                A
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="b" value="B" @if($user->mahasiswa->kelas == 'B') checked @endif>
-                            <label class="form-check-label" for="b">
-                                B
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="c" value="C" @if($user->mahasiswa->kelas == 'C') checked @endif>
-                            <label class="form-check-label" for="c">
-                                C
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="d" value="D" @if($user->mahasiswa->kelas == 'D') checked @endif>
-                            <label class="form-check-label" for="d">
-                                D
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="ic" value="IC" @if($user->mahasiswa->kelas == 'IC') checked @endif>
-                            <label class="form-check-label" for="ic">
-                                IC
-                            </label>
-                        </div>
-                    </div>
-
+                <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <select name="kelas" id="kelas" class="custom-select">
+                        <option value="">Pilih</option>
+                        @foreach ($user['kelas'] as $kelas)
+                            <option value="{{ $kelas->id }}" class="form-control" @if ($user['user']->mahasiswa->kelas_id == $kelas->id) selected @endif>{{ $kelas->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="">Semester: </label>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtSatu" value="1" @if($user->mahasiswa->semester == '1') checked @endif>
-                            <label class="form-check-label" for="smtSatu">
-                                1
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtDua" value="2" @if($user->mahasiswa->semester == '2') checked @endif>
-                            <label class="form-check-label" for="smtDua">
-                                2
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtTiga" value="3" @if($user->mahasiswa->semester == '3') checked @endif>
-                            <label class="form-check-label" for="smtTiga">
-                                3
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtEmpat" value="4" @if($user->mahasiswa->semester == '4') checked @endif>
-                            <label class="form-check-label" for="smtEmpat">
-                                4
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtLima" value="5" @if($user->mahasiswa->semester == '5') checked @endif>
-                            <label class="form-check-label" for="smtLima">
-                                5
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtEnam" value="6" @if($user->mahasiswa->semester == '6') checked @endif>
-                            <label class="form-check-label" for="smtEnam">
-                                6
-                            </label>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select name="semester" id="semester" class="custom-select">
+                        <option value="">Pilih</option>
+                        @foreach ($user['semester'] as $semester)
+                            <option value="{{ $semester->id }}" class="form-control" @if ($user['user']->mahasiswa->semester_id == $semester->id) selected @endif>{{ $semester->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
-            
+
             <div class="mb-3">
                 <label for="nim" class="form-label">NIM: </label>
-                <input type="text" class="form-control" id="nim" name="nim" value="{{$user->name}}">
+                <input type="text" class="form-control" id="nim" name="nim" value="{{$user['user']->name}}">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password: </label>
@@ -128,7 +51,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jenisKelamin" id="laki" value="L" @if($user->mahasiswa->jenis_kelamin == 'L') checked @endif>
+                            <input class="form-check-input" type="radio" name="jenisKelamin" id="laki" value="L" @if($user['user']->mahasiswa->jenis_kelamin == 'L') checked @endif>
                             <label class="form-check-label" for="laki">
                                 Pria
                             </label>
@@ -136,7 +59,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jenisKelamin" id="perempuan" value="P" @if($user->mahasiswa->jenis_kelamin == 'P') checked @endif>
+                            <input class="form-check-input" type="radio" name="jenisKelamin" id="perempuan" value="P" @if($user['user']->mahasiswa->jenis_kelamin == 'P') checked @endif>
                             <label class="form-check-label" for="perempuan">
                                 Wanita
                             </label>

@@ -15,103 +15,26 @@
             </div>
 
             <div class="mb-3">
-                <label for="">Kelas: </label>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="a" value="A" checked>
-                            <label class="form-check-label" for="a">
-                                A
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="b" value="B">
-                            <label class="form-check-label" for="b">
-                                B
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="c" value="C">
-                            <label class="form-check-label" for="c">
-                                C
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="d" value="D">
-                            <label class="form-check-label" for="d">
-                                D
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="kelas" id="ic" value="IC">
-                            <label class="form-check-label" for="ic">
-                                IC
-                            </label>
-                        </div>
-                    </div>
-
+                <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <select name="kelas" id="kelas" class="custom-select">
+                        <option value="">Pilih</option>
+                        @foreach ($data['kelas'] as $kelas)
+                            <option value="{{ $kelas->id }}" class="form-control">{{ $kelas->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="">Semester: </label>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtSatu" value="1" checked>
-                            <label class="form-check-label" for="smtSatu">
-                                1
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtDua" value="2">
-                            <label class="form-check-label" for="smtDua">
-                                2
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtTiga" value="3">
-                            <label class="form-check-label" for="smtTiga">
-                                3
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtEmpat" value="4">
-                            <label class="form-check-label" for="smtEmpat">
-                                4
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtLima" value="5">
-                            <label class="form-check-label" for="smtLima">
-                                5
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="semester" id="smtEnam" value="6">
-                            <label class="form-check-label" for="smtEnam">
-                                6
-                            </label>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select name="semester" id="semester" class="custom-select">
+                        <option value="">Pilih</option>
+                        @foreach ($data['semester'] as $semester)
+                            <option value="{{ $semester->id }}" class="form-control">{{ $semester->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 

@@ -16,4 +16,10 @@ class Mahasiswa extends Model
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
+    public function semester(){
+        return $this->belongsTo(Semester::class);
+    }
 }
