@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\MataKuliahController;
 use App\Http\Controllers\Admin\HariController;
 use App\Http\Controllers\Admin\RuangController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,4 +117,10 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(function () {
     //enter dashboard
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'mahasiswa'])->name('mahasiswa.dashboard');
+    //enter presensi
+    Route::get('/presensi',[MahasiswaController::class, 'presensi'])->name('mahasiswa.presensi');
+    //enter jadwal
+    Route::get('/jadwal',[MahasiswaController::class, 'jadwal'])->name('mahasiswa.jadwal');
+    //enter rekap
+    Route::get('/rekap',[MahasiswaController::class, 'rekap'])->name('mahasiswa.rekap');
 });
