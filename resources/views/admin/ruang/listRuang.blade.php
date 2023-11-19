@@ -70,7 +70,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $ruang->nama }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-warning">
+                                    <a href="{{ route('admin.editRuang', $ruang->id) }}" class="btn btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Button trigger modal -->

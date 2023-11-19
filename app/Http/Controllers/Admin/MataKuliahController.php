@@ -21,17 +21,7 @@ class MataKuliahController extends Controller
         return view('admin.matakuliah.listMataKuliah', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function saveMataKuliah(Request $request)
     {
         //
@@ -42,33 +32,22 @@ class MataKuliahController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(MataKuliah $mataKuliah)
+
+    public function editMataKuliah($id)
     {
-        //
+        $mataKuliah = MataKuliah::where('id', $id)->first();
+        return view('admin.matakuliah.editMataKuliah', compact('mataKuliah'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(MataKuliah $mataKuliah)
+    public function updateMataKuliah(Request $request, $id)
     {
-        //
+        $data['mataKuliah'] = MataKuliah::where('id', $id)->first();
+        $data['mataKuliah']->nama = $request->nama;
+        $data['mataKuliah']->semester_id = $request->semester;
+        $data['mataKuliah']->save();
+        return redirect()->route('admin.listMataKuliah');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, MataKuliah $mataKuliah)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function deleteMataKuliah($id)
     {
         MataKuliah::find($id)->delete();

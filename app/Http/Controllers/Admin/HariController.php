@@ -18,17 +18,6 @@ class HariController extends Controller
         return view('admin.hari.listHari')->with('hari', $hari);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function saveHari(Request $request)
     {
         Hari::create([
@@ -37,33 +26,28 @@ class HariController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Hari $hari)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function editHari(Hari $hari)
+    public function editHari($id)
     {
-        //
+        $hari = Hari::where('id', $id)->first();
+        return view('admin.hari.editHari', compact('hari'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Hari $hari)
+    public function updateHari(Request $request, $id)
     {
-        //
+        $hari = Hari::where('id', $id)->first();
+        $hari->nama = $request->nama;
+        $hari->save();
+        return redirect()->route('admin.listHari');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function deleteHari($id)
     {
         Hari::find($id)->delete();

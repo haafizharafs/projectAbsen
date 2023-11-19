@@ -85,6 +85,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/semester', [SemesterController::class, 'listSemester'])->name('admin.listSemester');
     Route::post('/semester/simpan', [SemesterController::class, 'saveSemester'])->name('admin.saveSemester');
     Route::post('/semester/hapus/{id}', [SemesterController::class, 'deleteSemester'])->name('admin.deleteSemester');
+    Route::get('/semester/edit/{id}', [SemesterController::class, 'editSemester'])->name('admin.editSemester');
+    Route::post('/semester/update/{id}', [SemesterController::class, 'updateSemester'])->name('admin.updateSemester');
 
     //JAM
     Route::get('/jam', [JamController::class, 'listJam'])->name('admin.listJam');
@@ -97,16 +99,23 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/mata-kuliah', [MataKuliahController::class, 'listMataKuliah'])->name('admin.listMataKuliah');
     Route::post('/mata-kuliah/simpan', [MataKuliahController::class, 'saveMataKuliah'])->name('admin.saveMataKuliah');
     Route::post('/mata-kuliah/hapus/{id}', [MataKuliahController::class, 'deleteMataKuliah'])->name('admin.deleteMataKuliah');
+    Route::get('/mata-kuliah/edit/{id}', [MataKuliahController::class, 'editMataKuliah'])->name('admin.editMataKuliah');
+    Route::post('/mata-kuliah/update/{id}', [MataKuliahController::class, 'updateMataKuliah'])->name('admin.updateMataKuliah');
 
     //HARI
     Route::get('/hari', [HariController::class, 'listHari'])->name('admin.listHari');
     Route::post('/hari/simpan', [HariController::class, 'saveHari'])->name('admin.saveHari');
     Route::post('/hari/hapus/{id}', [HariController::class, 'deleteHari'])->name('admin.deleteHari');
+    Route::get('/hari/edit/{id}', [HariController::class, 'editHari'])->name('admin.editHari');
+    Route::post('/hari/update/{id}', [HariController::class, 'updateHari'])->name('admin.updateHari');
+
 
     //RUANG
     Route::get('/ruang', [RuangController::class, 'listRuang'])->name('admin.listRuang');
     Route::post('/ruang/simpan', [RuangController::class, 'saveRuang'])->name('admin.saveRuang');
     Route::post('/ruang/hapus/{id}', [RuangController::class, 'deleteRuang'])->name('admin.deleteRuang');
+    Route::get('/ruang/edit/{id}', [RuangController::class, 'editRuang'])->name('admin.editRuang');
+    Route::post('/ruang/update/{id}', [RuangController::class, 'updateRuang'])->name('admin.updateRuang');
 });
 
 //middleware prefix dosen

@@ -71,7 +71,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $semester->nama }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-warning">
+                                    <a href="{{ route('admin.editSemester', $semester->id) }}" class="btn btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Button trigger modal -->

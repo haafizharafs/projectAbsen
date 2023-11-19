@@ -85,7 +85,7 @@
                                 <td>{{ $mataKuliah->semester->nama }}</td>
 
                                 <td>
-                                    <a href="#" class="btn btn-warning">
+                                    <a href="{{ route('admin.editMataKuliah', $mataKuliah->id) }}" class="btn btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Button trigger modal -->
