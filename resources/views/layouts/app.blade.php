@@ -33,7 +33,7 @@
                         <a href="{{ url('/admin/dashboard') }}"
                             class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/admin/pilih') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-user-plus me-3"></i>Buat Akun</a>
                         <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
                             onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>

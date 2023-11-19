@@ -1,0 +1,283 @@
+/* background index dan login  */
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #005956;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(237, 174, 28);
+}
+
+/* background */
+.custom-bg {
+  background-color: #005956;
+}
+
+/* button index */
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #039474;
+  font-weight: bold;
+}
+
+/* dashboard */
+:root {
+  --main-bg-color: #005956;
+  --main-text-color: #f6cc10;
+  --second-text-color: #bbbec5;
+  --second-bg-color: #c1efde;
+}
+
+.bg-side {
+  background-color: #005956;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+#wrapper {
+  /* overflow-x: hidden; */
+  background-image: linear-gradient(
+    to right,
+    #fffeec,
+    #f4f1ea,
+    #f8f3eb,
+    #fdf7eb,
+    #f7f0ea
+  );
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+.list-group-item {
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active {
+  background-color: transparent;
+  color: var(--main-text-color);
+  font-weight: bold;
+  border: none;
+}
+.create {
+  margin-top: 1.2rem;
+  margin-left: 2rem;
+  justify-content: center;
+  line-height: 0%;
+}
+.create p {
+  font-size: 1.2rem;
+}
+.create input {
+  height: 2.7rem;
+  width: 70rem;
+}
+.slt {
+  margin-top: 4rem;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.select img {
+  height: 20rem;
+}
+.submits {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.vas {
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.select img {
+  height: 23rem;
+}
+.rose {
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+.brawel1 img {
+  height: 15rem;
+  margin-right: 5rem 7%;
+}
+.brawel2 img {
+  height: 15rem;
+}
+.brawel3 img {
+  height: 15rem;
+  margin-left: 5rem 7%;
+}
+.text-down {
+  margin-left: 4rem;
+}
+.container-text {
+  justify-content: space-between;
+  display: flex;
+}
+.button-text {
+  margin-right: 4rem;
+  margin-top: 2.5rem;
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 4rem;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: blanchedalmond;
+}
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  background: #005956;
+  padding: 40px 0 20px 0;
+  color: #fff;
+}
+
+.counts .counters span {
+  font-size: 36px;
+  display: block;
+  font-weight: 700;
+}
+
+.counts .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .polnep {
+    display: none;
+  }
+
+  .custom-bg {
+    min-height: 100vh;
+  }
+
+  .tulisan {
+    padding-bottom: 100%;
+  }
+
+  .teknik {
+    position: fixed;
+    margin-top: 75%;
+    white-space: nowrap;
+  }
+
+  .tab-content {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 30%;
+  }
+
+  .tab-content h4 {
+    padding-right: 25px;
+  }
+
+  .select img {
+    height: 10rem;
+  }
+
+  .logo {
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    /* text-align: center; */
+    display: flex;
+    /* align-items: center; */
+    padding-left: 18%;
+    padding-top: 5%;
+  }
+}
+.create input {
+  width: 100%;
+}
+.create {
+  margin-right: 2rem;
+}

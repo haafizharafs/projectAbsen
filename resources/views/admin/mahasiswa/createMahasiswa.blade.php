@@ -15,15 +15,13 @@
             </div>
 
             <div class="mb-3">
-                <div class="form-group">
-                    <label for="kelas">Kelas</label>
-                    <select name="kelas" id="kelas" class="custom-select">
-                        <option value="">Pilih</option>
-                        @foreach ($data['kelas'] as $kelas)
-                            <option value="{{ $kelas->id }}" class="form-control">{{ $kelas->nama }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <label for="nim" class="form-label">NIM: </label>
+                <input type="text" class="form-control" id="nim" name="nim">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password: </label>
+                <input type="password" class="form-control" id="password" name="password">
             </div>
 
             <div class="mb-3">
@@ -39,13 +37,15 @@
             </div>
 
             <div class="mb-3">
-                <label for="nim" class="form-label">NIM: </label>
-                <input type="text" class="form-control" id="nim" name="nim">
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Password: </label>
-                <input type="password" class="form-control" id="password" name="password">
+                <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <select name="kelas" id="kelas" class="custom-select">
+                        <option value="">Pilih</option>
+                        @foreach ($data['kelas'] as $kelas)
+                            <option value="{{ $kelas->id }}" class="form-control">{{ $kelas->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
             <div class="mb-3">

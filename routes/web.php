@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\JamController;
 use App\Http\Controllers\Admin\MataKuliahController;
 use App\Http\Controllers\Admin\HariController;
 use App\Http\Controllers\Admin\RuangController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,8 @@ Route::get('/home', function () {
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     //enter dashboard
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'admin'])->name('admin.dashboard');
+    //enter pilih
+    Route::get('/pilih',[AdminController::class, 'listPilih'])->name('admin.listPilih');
 
     //DOSEN
     //enter list dosen
