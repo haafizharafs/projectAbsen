@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Hari</title>
+    <title>Ruang</title>
     <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
     @section('content')
         <div class="card">
             <div class="card-header">
-                <h1>Hari</h1>
+                <h1>Ruang</h1>
             </div>
 
             <div class="card-body">
@@ -37,12 +37,12 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{ route('admin.saveHari') }}" method="post">
+                            <form action="{{ route('admin.saveRuang') }}" method="post">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="namaHari" class="form-label">Nama Hari: </label>
-                                        <input type="text" class="form-control" id="namaHari" name="nama">
+                                        <label for="namaRuang" class="form-label">Nama Ruang: </label>
+                                        <input type="text" class="form-control" id="namaRuang" name="nama">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -54,33 +54,33 @@
                     </div>
                 </div>
 
-                <h1>List Hari: </h1>
+                <h1>List Ruang: </h1>
 
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Hari</th>
+                            <th scope="col">Kelas</th>
                             <th scope="col">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($hari as $hari)
+                        @foreach ($ruang as $ruang)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $hari->nama }}</td>
+                                <td>{{ $ruang->nama }}</td>
                                 <td>
                                     <a href="#" class="btn btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#modalDelete-{{ $hari->id }}">
+                                        data-bs-target="#modalDelete-{{ $ruang->id }}">
                                         <i class="fas fa-trash"></i>
                                     </button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="modalDelete-{{ $hari->id }}" tabindex="-1"
+                                    <div class="modal fade" id="modalDelete-{{ $ruang->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -90,12 +90,12 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Yakin Ingin Menghapus Hari {{ $hari->nama }}?
+                                                    Yakin Ingin Menghapus Ruang {{ $ruang->nama }}?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Batal</button>
-                                                    <form action="{{ route('admin.deleteHari', $hari->id) }}"
+                                                    <form action="{{ route('admin.deleteRuang', $ruang->id) }}"
                                                         method="post">
                                                         @csrf
                                                         <button type="submit" class="btn btn-primary">Hapus</button>
