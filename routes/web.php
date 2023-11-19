@@ -46,7 +46,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     //enter dashboard
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'admin'])->name('admin.dashboard');
     //enter pilih
-    Route::get('/pilih',[AdminController::class, 'listPilih'])->name('admin.listPilih');
+    Route::get('/pilih', [AdminController::class, 'listPilih'])->name('admin.listPilih');
 
     //DOSEN
     //enter list dosen
@@ -79,32 +79,34 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     //KELAS
     Route::get('/kelas', [KelasController::class, 'listKelas'])->name('admin.listKelas');
     Route::post('/kelas/simpan', [KelasController::class, 'saveKelas'])->name('admin.saveKelas');
-    Route::post('/kelas/hapus{id}', [KelasController::class, 'deleteKelas'])->name('admin.deleteKelas');
+    Route::post('/kelas/hapus/{id}', [KelasController::class, 'deleteKelas'])->name('admin.deleteKelas');
 
     //SEMESTER
     Route::get('/semester', [SemesterController::class, 'listSemester'])->name('admin.listSemester');
     Route::post('/semester/simpan', [SemesterController::class, 'saveSemester'])->name('admin.saveSemester');
-    Route::post('/semester/hapus{id}', [SemesterController::class, 'deleteSemester'])->name('admin.deleteSemester');
+    Route::post('/semester/hapus/{id}', [SemesterController::class, 'deleteSemester'])->name('admin.deleteSemester');
 
     //JAM
     Route::get('/jam', [JamController::class, 'listJam'])->name('admin.listJam');
+    Route::get('/jam/edit/{id}', [JamController::class, 'editJam'])->name('admin.editJam');
     Route::post('/jam/simpan', [JamController::class, 'saveJam'])->name('admin.saveJam');
-    Route::post('/jam/hapus{id}', [JamController::class, 'deleteJam'])->name('admin.deleteJam');
+    Route::post('/jam/update/{id}', [JamController::class, 'updateJam'])->name('admin.updateJam');
+    Route::post('/jam/hapus/{id}', [JamController::class, 'deleteJam'])->name('admin.deleteJam');
 
     //MATA KULIAH
     Route::get('/mata-kuliah', [MataKuliahController::class, 'listMataKuliah'])->name('admin.listMataKuliah');
     Route::post('/mata-kuliah/simpan', [MataKuliahController::class, 'saveMataKuliah'])->name('admin.saveMataKuliah');
-    Route::post('/mata-kuliah/hapus{id}', [MataKuliahController::class, 'deleteMataKuliah'])->name('admin.deleteMataKuliah');
+    Route::post('/mata-kuliah/hapus/{id}', [MataKuliahController::class, 'deleteMataKuliah'])->name('admin.deleteMataKuliah');
 
     //HARI
     Route::get('/hari', [HariController::class, 'listHari'])->name('admin.listHari');
     Route::post('/hari/simpan', [HariController::class, 'saveHari'])->name('admin.saveHari');
-    Route::post('/hari/hapus{id}', [HariController::class, 'deleteHari'])->name('admin.deleteHari');
+    Route::post('/hari/hapus/{id}', [HariController::class, 'deleteHari'])->name('admin.deleteHari');
 
     //RUANG
     Route::get('/ruang', [RuangController::class, 'listRuang'])->name('admin.listRuang');
     Route::post('/ruang/simpan', [RuangController::class, 'saveRuang'])->name('admin.saveRuang');
-    Route::post('/ruang/hapus{id}', [RuangController::class, 'deleteRuang'])->name('admin.deleteRuang');
+    Route::post('/ruang/hapus/{id}', [RuangController::class, 'deleteRuang'])->name('admin.deleteRuang');
 });
 
 //middleware prefix dosen
@@ -118,13 +120,13 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(functi
     //enter dashboard
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'mahasiswa'])->name('mahasiswa.dashboard');
     //enter presensi
-    Route::get('/presensi',[MahasiswaController::class, 'presensi'])->name('mahasiswa.presensi');
+    Route::get('/presensi', [MahasiswaController::class, 'presensi'])->name('mahasiswa.presensi');
     //enter jadwal
-    Route::get('/jadwal',[MahasiswaController::class, 'jadwal'])->name('mahasiswa.jadwal');
+    Route::get('/jadwal', [MahasiswaController::class, 'jadwal'])->name('mahasiswa.jadwal');
     //enter rekap
-    Route::get('/rekap',[MahasiswaController::class, 'rekap'])->name('mahasiswa.rekap');
+    Route::get('/rekap', [MahasiswaController::class, 'rekap'])->name('mahasiswa.rekap');
     //enter rekapHari
-    Route::get('/rekap-hari',[MahasiswaController::class, 'rekapHari'])->name('mahasiswa.rekapHari');
+    Route::get('/rekap-hari', [MahasiswaController::class, 'rekapHari'])->name('mahasiswa.rekapHari');
     //enter rekapMinggu
-    Route::get('/rekap-minggu',[MahasiswaController::class, 'rekapMinggu'])->name('mahasiswa.rekapMinggu');
+    Route::get('/rekap-minggu', [MahasiswaController::class, 'rekapMinggu'])->name('mahasiswa.rekapMinggu');
 });
