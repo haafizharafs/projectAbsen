@@ -47,7 +47,7 @@
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Kelas</a>
                             <a href="{{ url('/admin/semester') }}"
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Semester</a>
-                            <a href="#" class="d-flex flex-column w3-bar-item w3-button text-white">Hari</a>
+                            <a href="{{ url('/admin/hari') }}" class="d-flex flex-column w3-bar-item w3-button text-white">Hari</a>
                             <a href="{{ url('/admin/jam') }}"
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Jam</a>
 

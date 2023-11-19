@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\KelasController;
 use App\Http\Controllers\Admin\SemesterController;
 use App\Http\Controllers\Admin\JamController;
 use App\Http\Controllers\Admin\MataKuliahController;
+use App\Http\Controllers\Admin\HariController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +90,11 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/mata-kuliah', [MataKuliahController::class, 'listMataKuliah'])->name('admin.listMataKuliah');
     Route::post('/mata-kuliah/simpan', [MataKuliahController::class, 'saveMataKuliah'])->name('admin.saveMataKuliah');
     Route::post('/mata-kuliah/hapus{id}', [MataKuliahController::class, 'deleteMataKuliah'])->name('admin.deleteMataKuliah');
+
+    //HARI
+    Route::get('/hari', [HariController::class, 'listHari'])->name('admin.listHari');
+    Route::post('/hari/simpan', [HariController::class, 'saveHari'])->name('admin.saveHari');
+    Route::post('/hari/hapus{id}', [HariController::class, 'deleteHari'])->name('admin.deleteHari');
 });
 
 //middleware prefix dosen
