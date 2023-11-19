@@ -82,19 +82,19 @@
                     </nav>
                     <div class="container-rekap">
                         <div class="button-container1">
-                            <a href="perhari.html">
+                            <a href="{{ url('/mahasiswa/rekap-hari') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
                                 </button>
                             </a>
-                            <a href="perminggu.html">
+                            <a href="{{ url('/mahasiswa/rekap-minggu') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perminggu</span>
                                 </button>
                             </a>
-                            <a href="persemester.html">
+                            <a href="{{ url('/mahasiswa/rekap-semester') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Persemester</span>

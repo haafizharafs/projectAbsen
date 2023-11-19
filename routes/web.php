@@ -123,4 +123,8 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(functi
     Route::get('/jadwal',[MahasiswaController::class, 'jadwal'])->name('mahasiswa.jadwal');
     //enter rekap
     Route::get('/rekap',[MahasiswaController::class, 'rekap'])->name('mahasiswa.rekap');
+    //enter rekapHari
+    Route::get('/rekap-hari',[MahasiswaController::class, 'rekapHari'])->name('mahasiswa.rekapHari');
+    //enter rekapMinggu
+    Route::get('/rekap-minggu',[MahasiswaController::class, 'rekapMinggu'])->name('mahasiswa.rekapMinggu');
 });

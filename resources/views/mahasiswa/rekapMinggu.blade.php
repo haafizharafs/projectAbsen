@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <link rel="stylesheet" href="styleMhs.css" />
+    <link rel="stylesheet" href="{{ asset('/') }}/css/styleMhs.css" />
     <title>SiHadir</title>
-    <link rel="shortcut icon" href="images/sihadir.png">
+    <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
         <div class="bg-side" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                <img src="images/sihadir2.png" alt="" width="45" height="50"> SiHadir
+                <img src="{{ asset('/') }}/images/sihadir2.png" alt="" width="45" height="50"> SiHadir
 
             </div>
             <div class="list-group list-group-flush my-3">
@@ -75,15 +75,15 @@
                     <div class="container-2">
                         <div class="button-container-2">
                             <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/perhari.png" alt="Button 1" width="50" height="50">
+                                <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
                             </button>
                             <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/perminggu.png" alt="Button 2" width="50" height="50">
+                                <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 2" width="50" height="50">
                                 <span class="button-text">Perminggu</span>
                             </button>
                             <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/persemester.png" alt="Button 3" width="50" height="50">
+                                <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 3" width="50" height="50">
                                 <span class="button-text">Persemester</span>
                             </button>
                         </div>
@@ -148,7 +148,7 @@
     <!-- /#page-content-wrapper -->
 
 
-    <script src="main.js"></script>
+    <script src="{{ asset('/') }}/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script>
