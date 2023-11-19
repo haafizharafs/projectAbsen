@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\MataKuliahController;
 use App\Http\Controllers\Admin\HariController;
 use App\Http\Controllers\Admin\RuangController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\MahasiswaController;
+use App\Http\Controllers\Mahasiswa\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------

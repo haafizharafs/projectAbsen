@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <link rel="stylesheet" href="styleMhs.css" />
+    <link rel="stylesheet" href="{{ asset('/') }}/css/styleMhs.css" />
     <title>SiHadir</title>
-    <link rel="shortcut icon" href="images/sihadir.png">
+    <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
 </head>
 
 <body>
@@ -20,17 +20,17 @@
 
         <div class="bg-side" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                <img src="images/sihadir2.png" alt="" width="45" height="50"> SiHadir
+                <img src="{{ asset('/') }}/images/sihadir2.png" alt="" width="45" height="50"> SiHadir
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="mahasiswa.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="presensi.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="jadwalMhs.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="rekap.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                 <a href="index.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
@@ -76,19 +76,19 @@
             <div class="button-containerr">
                 <a href="file/Semester1.pdf" target="_blank">
                 <button class="icon-button">
-                    <img class="icon" src="images/calendar_1253979.png" alt="Button 1" width="50" height="50">
+                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 1</span>
                 </button> 
                 </a>
                 <a href="file/Semester3.pdf" target="_blank">        
                 <button class="icon-button">
-                    <img class="icon" src="images/calendar_1253979.png" alt="Button 1" width="50" height="50">
+                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 3</span>
                 </button> 
                 </a>
                 <a href="file/Semester5.pdf" target="_blank">
                 <button class="icon-button">
-                    <img class="icon" src="images/calendar_1253979.png" alt="Button 1" width="50" height="50">
+                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 5</span>
                 </button> 
                 </a>
@@ -101,7 +101,7 @@
     <!-- /#page-content-wrapper -->
 
 
-    <script src="main.js"></script>
+    <script src="{{ asset('/') }}/js/mainMhs.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script>
