@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Jam</title>
+    <title>Kelas</title>
     <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,14 +14,11 @@
 </head>
 
 <body>
-    <!-- Button trigger modal -->
-
-
     @extends('layouts.app')
     @section('content')
         <div class="card">
             <div class="card-header">
-                <h1>Jam</h1>
+                <h1>Hari</h1>
             </div>
 
             <div class="card-body">
@@ -40,16 +37,12 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{ route('admin.saveJam') }}" method="post">
+                            <form action="{{ route('admin.saveHari') }}" method="post">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="mulai" class="form-label">Mulai: </label>
-                                        <input type="text" class="form-control" id="mulai" name="mulai">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="selesai" class="form-label">Selesai: </label>
-                                        <input type="text" class="form-control" id="selesai" name="selesai">
+                                        <label for="namaHari" class="form-label">Nama Hari: </label>
+                                        <input type="text" class="form-control" id="namaHari" name="nama">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -61,35 +54,33 @@
                     </div>
                 </div>
 
-                <h1>List Jam: </h1>
+                <h1>List Hari: </h1>
 
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Mulai</th>
-                            <th scope="col">Selesai</th>
+                            <th scope="col">Hari</th>
                             <th scope="col">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($jam as $jam)
+                        @foreach ($hari as $hari)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $jam->mulai }}</td>
-                                <td>{{ $jam->selesai }}</td>
+                                <td>{{ $hari->nama }}</td>
                                 <td>
                                     <a href="#" class="btn btn-warning">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#modalDelete-{{ $jam->id }}">
+                                        data-bs-target="#modalDelete-{{ $hari->id }}">
                                         <i class="fas fa-trash"></i>
                                     </button>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="modalDelete-{{ $jam->id }}" tabindex="-1"
+                                    <div class="modal fade" id="modalDelete-{{ $hari->id }}" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -99,12 +90,13 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Yakin Ingin Menghapus Jam ke-{{ $jam->id }}?
+                                                    Yakin Ingin Menghapus Hari {{ $hari->nama }}?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal">Batal</button>
-                                                    <form action="{{ route('admin.deleteJam', $jam->id) }}" method="post">
+                                                    <form action="{{ route('admin.deleteHari', $hari->id) }}"
+                                                        method="post">
                                                         @csrf
                                                         <button type="submit" class="btn btn-primary">Hapus</button>
                                                     </form>
