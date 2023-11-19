@@ -1,0 +1,480 @@
+/* background index dan login  */
+
+/* scroll */
+::-webkit-scrollbar {
+    width: .6rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #005956;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(237, 174, 28);
+}
+
+
+/* background */
+.custom-bg {
+    background-color: #005956;
+}
+
+
+/* button index */
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #039474;
+    font-weight: bold;
+}
+
+/* dashboard */
+:root {
+    --main-bg-color: #005956;
+    --main-text-color: #f6cc10;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+}
+
+.bg-side {
+    background-color: #005956;
+}
+
+
+.primary-text {
+    color: var(--main-text-color);
+}
+
+.second-text {
+    color: var(--second-text-color);
+}
+
+.primary-bg {
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+    background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+    border-radius: 100%;
+}
+
+#wrapper {
+    /* overflow-x: hidden; */
+    background-image: linear-gradient(to right,
+            #fffeec,
+            #f4f1ea,
+            #f8f3eb,
+            #fdf7eb,
+            #f7f0ea);
+}
+
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+    background: #005956;
+    padding: 40px 0 20px 0;
+    color: #fff;
+}
+
+.counts .counters span {
+    font-size: 36px;
+    display: block;
+    font-weight: 700;
+}
+
+.counts .counters p {
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .polnep {
+        display: none;
+    }
+
+    .custom-bg {
+        min-height: 100vh;
+    }
+
+    .tulisan {
+        padding-bottom: 100%;
+    }
+
+    .teknik {
+        position: fixed;
+        margin-top: 75%;
+        white-space: nowrap;
+    }
+
+    .tab-content {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 30%;
+    }
+
+    .tab-content h4 {
+        padding-right: 25px;
+    }
+
+    .logo {
+        width: 300px;
+        height: auto;
+        justify-content: center;
+        /* text-align: center; */
+        display: flex;
+        /* align-items: center; */
+        padding-left: 18%;
+        padding-top: 5%;
+    }
+}
+
+/* Jadwal Mahasiswa*/
+.container1 {
+    text-align: center;
+    margin: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.button-containerr {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-button {
+    color: #080808;
+    margin: 0 10px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.icon {   
+    font-size: 24px;
+}
+
+
+/* Presensi Mahasiswa*/
+body {
+    font-family: Arial, sans-serif;
+}
+
+#container-p {
+    margin: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.content-presensi{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.upload-button {
+    margin-left: 20px;
+}
+
+.upload-button input[type="file"] {
+    display: none;
+}
+
+.upload-button label {
+    padding: 10px 20px;
+    background-color: #2D747C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.upload-button label:hover {
+    background-color: #2D747C;
+}
+
+.kirim-button a {
+    position: absolute;
+    padding: 5px 20px;
+    bottom: auto;
+    right: 200px;
+    background-color: #2D747C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"] {
+    background-color: #2D747C;
+    border: none;
+    color: white;
+}
+
+.kirim-button label:hover {
+    background-color: #2D747C;
+}
+
+/* form */
+#container-form {
+    text-align: left;
+    margin: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;  
+    border-radius: 5px;
+}
+
+/* Rekap Data Mahasiswa*/
+.container-rekap {
+    text-align: center;
+    margin: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.button-container1 {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-button1 {
+    color: #080808;
+    margin: 0 10px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.icon {   
+    font-size: 24px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-top: 50px;
+  }
+  
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+.icon-button1:hover {
+    background-color: #f6cc10;
+}
+
+.icon-button1:active {
+    border: 2px solid #0056b3;
+}
+
+/* Rekap Data Perhari, Perminggu, Persemester */
+.container-2 {
+    text-align: center;
+    margin: 20px;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.container-2 h3 {
+    text-align: left;
+}
+
+.container-2 p {
+    text-align: left;
+}
+
+.container-2 th {
+    background-color: #f6cc10;
+}
+
+.button-container-2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.icon-button {
+    color: #080808;
+    margin: 0 10px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.icon {   
+    font-size: 24px;
+}
+
+.icon-button:hover {
+    background-color: #f6cc10;
+}
+
+.icon-button:active {
+    border: 2px solid #0056b3;
+}
+
+.search-container {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#search {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    background-color: #2D747C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #f6cc10;
+}
+
+.td .lihat-button a {
+    position: absolute;
+    padding: 5px 20px;
+    bottom: auto;
+    right: 200px;
+    background-color: #2D747C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"] {
+    background-color: #2D747C;
+    border: none;
+    color: white;
+}
+
+.td .lihat-button label:hover {
+    background-color: #2D747C;
+}
+
+
+
