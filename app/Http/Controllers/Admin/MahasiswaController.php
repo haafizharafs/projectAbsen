@@ -60,6 +60,7 @@ class MahasiswaController extends Controller
         $user['semester'] = Semester::all();
         return view('admin.mahasiswa.editMahasiswa', compact('user'));
     }
+
     public function updateMahasiswa(Request $request, $id){
         //mengisi tabel user berdasarkan inputan form
         $user = User::where('id', $id)->first();
