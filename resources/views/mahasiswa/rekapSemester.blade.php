@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <link rel="stylesheet" href="styleMhs.css" />
+    <link rel="stylesheet" href="{{ asset('/') }}/css/styleMhs.css" />
     <title>SiHadir</title>
-    <link rel="shortcut icon" href="images/sihadir.png">
+    <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
 </head>
 
 <body>
@@ -20,19 +20,27 @@
 
         <div class="bg-side" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                <img src="images/sihadir2.png" alt="" width="45" height="50"> SiHadir
+                <img src="{{ asset('/') }}/images/sihadir2.png" alt="" width="45" height="50"> SiHadir
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="mahasiswa.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="presensi.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="jadwalMhs.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="rekap.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
-                <a href="index.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+
+                <!--form untuk logout-->
+                <form id="logout-form" action="{{ route('logout') }}" method="post">
+                    @csrf
+                </form>
+                <!--tombol logout yang mengakses form logout-->
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -74,23 +82,29 @@
                     </nav>
                     <div class="container-2">
                         <div class="button-container-2">
-                            <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/perhari.png" alt="Button 1" width="50" height="50">
+                            <a href="{{ url('/mahasiswa/rekap-hari') }}">
+                                <button class="icon-button1" id="myButton">
+                                <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
-                            </button>
-                            <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/perminggu.png" alt="Button 2" width="50" height="50">
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/rekap-minggu') }}">
+                                <button class="icon-button1" id="myButton">
+                                <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perminggu</span>
-                            </button>
-                            <button class="icon-button" id="myButton">
-                                <img class="icon" src="images/persemester.png" alt="Button 3" width="50" height="50">
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/rekap-semester') }}">
+                                <button class="icon-button1" id="myButton">
+                                <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Persemester</span>
-                            </button>
+                                </button>
+                            </a>
                         </div>
 
-                        <h3>REKAP PRESENSI PERKULIAHAN PERMINGGU</h3>
+                        <h3>REKAP PRESENSI PERKULIAHAN PERSEMESTER</h3>
                         <p>Semester 5</p>
-                        
+
                         <!-- Search -->
                         <div class="search-container">
                             <input type="text" id="search" placeholder="Cari nama...">
@@ -142,13 +156,13 @@
                                 </td>
                             </tr>
                         </table>
-                    </div>     
+                    </div>
             </div>
 
     <!-- /#page-content-wrapper -->
 
 
-    <script src="main.js"></script>
+    <script src="{{ asset('/') }}/js/mainMhs.css"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script>
@@ -171,7 +185,7 @@
         myButton.addEventListener("mousedown", function() {
             yButton.style.border = "2px solid #0056b3";
         });
-                    
+
         myButton.addEventListener("mouseup", function() {
             myButton.style.border = "2px solid #0056b3";
         });

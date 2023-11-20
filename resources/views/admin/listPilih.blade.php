@@ -24,37 +24,39 @@
 
       <div class="bg-side" id="sidebar-wrapper">
         <div
-          class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"
-        >
+          class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
           <img src="{{ asset('/') }}/images/sihadir2.png" alt="" width="45" height="50" />
           SiHadir
         </div>
         <div class="list-group list-group-flush my-3">
-          <a
-            href="{{ url('/admin/dashboard') }}"
-            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-            ><i class="fas fa-home me-3"></i>Dashboard</a
-          >
-          <a
-            href="{{ url('/admin/pilih') }}"
-            class="list-group-item list-group-item-action bg-transparent second-text active"
-            ><i class="fas fa-user-plus me-3"></i>Buat Akun</a
-          >
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-            ><i class="fas fa-file-alt me-3"></i> Jadwal</a
-          >
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-            ><i class="fas fa-calendar-alt me-3"></i> Data Rekap</a
-          >
-          <a
-            href="#"
-            class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
-            ><i class="fas fa-power-off me-2"></i>Logout</a
-          >
+            <a href="{{ url('/admin/dashboard') }}"
+                class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-home me-3"></i>Dashboard</a>
+            <a href="{{ url('/admin/pilih') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                class="fas fa-user-plus me-3"></i>Buat Akun</a>
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
+                onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>
+                Jadwal <i class=" fa fa-caret-down"></i>
+            </button>
+            <div id="demoAcc" class="d-none">
+                <a href="#" class=" d-flex flex-column w3-bar-item w3-button text-white">Jadwal</a>
+                <a href="{{ url('/admin/mata-kuliah') }}"
+                    class=" d-flex flex-column w3-bar-item w3-button text-white">Mata Kuliah</a>
+                <a href="{{ url('/admin/kelas') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Kelas</a>
+                <a href="{{ url('/admin/semester') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Semester</a>
+                <a href="{{ url('/admin/hari') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Hari</a>
+                <a href="{{ url('/admin/jam') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Jam</a>
+                <a href="{{ url('/admin/ruang') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Ruang</a>
+            </div>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                    <i class="fas fa-power-off me-2"></i>Logout</a>
         </div>
       </div>
 

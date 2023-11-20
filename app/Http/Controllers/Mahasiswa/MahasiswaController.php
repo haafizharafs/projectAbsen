@@ -24,4 +24,7 @@ class MahasiswaController extends Controller
     public function rekapMinggu(){
         return view('mahasiswa.rekapMinggu');
     }
+    public function rekapSemester(){
+        return view('mahasiswa.rekapSemester');
+    }
 }

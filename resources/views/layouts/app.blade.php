@@ -53,7 +53,6 @@
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Jam</a>
                             <a href="{{ url('/admin/ruang') }}"
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Ruang</a>
-
                         </div>
                         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
@@ -81,13 +80,13 @@
                     @endrole
 
                     @role('mahasiswa')
-                        <a href="" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-list-alt me-3"></i>Presensi</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-file-alt me-3"></i> Jadwal</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 

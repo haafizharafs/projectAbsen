@@ -32,7 +32,7 @@
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
                 <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
-                
+
                 <!--form untuk logout-->
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
                         @csrf
@@ -51,7 +51,7 @@
 
         <div id="page-content-wrapper">
             <div class="container-fluid px-4">
-                
+
             <!--jadwal per semester-->
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
@@ -69,7 +69,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                                    <i class="fas fa-user me-2"></i>&nbsp Mahasiswa
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -92,16 +92,16 @@
             <div class="radio-group">
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="html">H</label><br>
-        
+
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="css">TH</label><br>
-        
+
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="javascript">I</label><br>
-        
+
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="javascript">S</label><br>
-        
+
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="javascript">A</label>
             </div>
@@ -131,7 +131,7 @@
             <script>
                 function pindahKeHalamanLain() {
                     // Menggunakan window.location untuk mengarahkan ke halaman lain
-                    window.location.href = "form.html"; 
+                    window.location.href = "form.html";
                 }
             </script>
         </form>

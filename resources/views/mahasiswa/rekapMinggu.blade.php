@@ -24,15 +24,23 @@
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="mahasiswa.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="presensi.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="jadwalMhs.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="rekap.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
-                <a href="index.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+
+                <!--form untuk logout-->
+                <form id="logout-form" action="{{ route('logout') }}" method="post">
+                    @csrf
+                </form>
+                <!--tombol logout yang mengakses form logout-->
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
@@ -74,23 +82,29 @@
                     </nav>
                     <div class="container-2">
                         <div class="button-container-2">
-                            <button class="icon-button" id="myButton">
+                            <a href="{{ url('/mahasiswa/rekap-hari') }}">
+                                <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
-                            </button>
-                            <button class="icon-button" id="myButton">
-                                <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 2" width="50" height="50">
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/rekap-minggu') }}">
+                                <button class="icon-button1" id="myButton">
+                                <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perminggu</span>
-                            </button>
-                            <button class="icon-button" id="myButton">
-                                <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 3" width="50" height="50">
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/rekap-semester') }}">
+                                <button class="icon-button1" id="myButton">
+                                <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Persemester</span>
-                            </button>
+                                </button>
+                            </a>
                         </div>
 
                         <h3>REKAP PRESENSI PERKULIAHAN PERMINGGU</h3>
                         <p>Semester 5</p>
-                        
+
                         <!-- Search -->
                         <div class="search-container">
                             <input type="text" id="search" placeholder="Cari nama...">
@@ -142,7 +156,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </div>     
+                    </div>
             </div>
 
     <!-- /#page-content-wrapper -->
@@ -171,7 +185,7 @@
         myButton.addEventListener("mousedown", function() {
             yButton.style.border = "2px solid #0056b3";
         });
-                    
+
         myButton.addEventListener("mouseup", function() {
             myButton.style.border = "2px solid #0056b3";
         });

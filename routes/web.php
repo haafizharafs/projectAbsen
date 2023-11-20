@@ -140,4 +140,6 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(functi
     Route::get('/rekap-hari', [MahasiswaController::class, 'rekapHari'])->name('mahasiswa.rekapHari');
     //enter rekapMinggu
     Route::get('/rekap-minggu', [MahasiswaController::class, 'rekapMinggu'])->name('mahasiswa.rekapMinggu');
+    //enter rekapSemester
+    Route::get('/rekap-semester', [MahasiswaController::class, 'rekapSemester'])->name('mahasiswa.rekapSemester');
 });

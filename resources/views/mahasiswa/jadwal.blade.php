@@ -32,7 +32,7 @@
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
                 <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
-                
+
                 <!--form untuk logout-->
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
                         @csrf
@@ -70,7 +70,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                            <i class="fas fa-user me-2"></i>&nbsp Mahasiswa
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -86,24 +86,24 @@
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 1</span>
-                </button> 
+                </button>
                 </a>
-                <a href="file/Semester3.pdf" target="_blank">        
+                <a href="file/Semester3.pdf" target="_blank">
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 3</span>
-                </button> 
+                </button>
                 </a>
                 <a href="file/Semester5.pdf" target="_blank">
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 5</span>
-                </button> 
+                </button>
                 </a>
             </div>
         </div>
 </div>
-            
+
 </div>
 
     <!-- /#page-content-wrapper -->

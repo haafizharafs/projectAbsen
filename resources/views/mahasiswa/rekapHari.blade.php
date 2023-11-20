@@ -32,7 +32,7 @@
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
                 <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
-                
+
                 <!--form untuk logout-->
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
                         @csrf
@@ -82,7 +82,7 @@
                     </nav>
                     <div class="container-2">
                         <div class="button-container-2">
-                        <a href="{{ url('/mahasiswa/rekap-hari') }}">
+                            <a href="{{ url('/mahasiswa/rekap-hari') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
@@ -104,7 +104,7 @@
 
                         <h3>REKAP PRESENSI PERKULIAHAN PERHARI</h3>
                         <p>Semester 5</p>
-                        
+
                         <!-- Search -->
                         <div class="search-container">
                             <input type="text" id="search" placeholder="Cari nama...">
@@ -156,7 +156,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </div>     
+                    </div>
             </div>
 
     <!-- /#page-content-wrapper -->
@@ -185,11 +185,11 @@
         myButton.addEventListener("mousedown", function() {
             yButton.style.border = "2px solid #0056b3";
         });
-                    
+
         myButton.addEventListener("mouseup", function() {
             myButton.style.border = "2px solid #0056b3";
         });
-                      
+
     </script>
 </body>
 
