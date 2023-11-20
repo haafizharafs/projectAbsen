@@ -81,13 +81,13 @@
                     @endrole
 
                     @role('mahasiswa')
-                        <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        <a href="" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-list-alt me-3"></i>Presensi</a>
-                        <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-file-alt me-3"></i> Jadwal</a>
-                        <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 
@@ -155,7 +155,7 @@
                                     @endrole
 
                                     @role('mahasiswa')
-                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                                        <i class="fas fa-user me-2"></i>&nbsp Mahasiswa
                                     @endrole
                                 @endauth
                             </a>
