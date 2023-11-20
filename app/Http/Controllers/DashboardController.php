@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         return view('dosen.dashboard');
     }
     public function mahasiswa(){
+        // return Auth::user()->id;
         return view('mahasiswa.dashboard');
     }
 }

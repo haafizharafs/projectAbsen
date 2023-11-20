@@ -14,7 +14,7 @@ class Mahasiswa extends Model
 
     //data mahasiswa dimiliki satu user
     public function user(){
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
     public function kelas(){
         return $this->belongsTo(Kelas::class);

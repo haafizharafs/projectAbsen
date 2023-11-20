@@ -154,7 +154,7 @@
                                     @endrole
 
                                     @role('mahasiswa')
-                                        <i class="fas fa-user me-2"></i>&nbsp Mahasiswa
+                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
                                     @endrole
                                 @endauth
                             </a>
