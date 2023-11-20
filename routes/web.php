@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\HariController;
 use App\Http\Controllers\Admin\RuangController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Mahasiswa\MahasiswaController;
+use App\Http\Controllers\Dosen\DosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'admin'])->name('admin.dashboard');
     //enter pilih
     Route::get('/pilih', [AdminController::class, 'listPilih'])->name('admin.listPilih');
+    //enter rekap
+    Route::get('/rekap', [AdminController::class, 'rekap'])->name('admin.rekap');
+    //enter rekapHari
+    Route::get('/rekap-hari', [AdminController::class, 'rekapHari'])->name('admin.rekapHari');
+    //enter rekapMinggu
+    Route::get('/rekap-minggu', [AdminController::class, 'rekapMinggu'])->name('admin.rekapMinggu');
+    //enter rekapSemester
+    Route::get('/rekap-semester', [AdminController::class, 'rekapSemester'])->name('admin.rekapSemester');
 
     //DOSEN
     //enter list dosen
@@ -124,6 +133,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
     //enter dashboard
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dosen'])->name('dosen.dashboard');
+    //enter verifikasi
+    Route::get('/verifikasi', [DosenController::class, 'verifikasi'])->name('dosen.verifikasi');
 });
 
 //middleware prefix mahasiswa
@@ -134,6 +145,12 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(functi
     Route::get('/presensi', [MahasiswaController::class, 'presensi'])->name('mahasiswa.presensi');
     //enter jadwal
     Route::get('/jadwal', [MahasiswaController::class, 'jadwal'])->name('mahasiswa.jadwal');
+    //enter jadwalS1
+    Route::get('/jadwal-semester-satu', [MahasiswaController::class, 'jadwalSemesterSatu'])->name('mahasiswa.jadwal-semester-satu');
+    //enter jadwalS3
+    Route::get('/jadwal-semester-tiga', [MahasiswaController::class, 'jadwalSemesterTiga'])->name('mahasiswa.jadwal-semester-tiga');
+    //enter jadwalS5
+    Route::get('/jadwal-semester-lima', [MahasiswaController::class, 'jadwalSemesterLima'])->name('mahasiswa.jadwal-semester-lima');
     //enter rekap
     Route::get('/rekap', [MahasiswaController::class, 'rekap'])->name('mahasiswa.rekap');
     //enter rekapHari

@@ -12,4 +12,16 @@ class AdminController extends Controller
     public function listPilih(){
         return view('admin.listPilih');
     }
+    public function rekap(){
+        return view('admin.rekap');
+    }
+    public function rekapHari(){
+        return view('admin.rekapHari');
+    }
+    public function rekapMinggu(){
+        return view('admin.rekapMinggu');
+    }
+    public function rekapSemester(){
+        return view('admin.rekapSemester');
+    }
 }

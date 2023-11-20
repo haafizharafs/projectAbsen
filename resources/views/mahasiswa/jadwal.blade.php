@@ -70,7 +70,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-2"></i>&nbsp Mahasiswa
+                            <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -82,19 +82,19 @@
         </nav>
         <div class="container1">
             <div class="button-containerr">
-                <a href="file/Semester1.pdf" target="_blank">
+                <a href="{{ url('/mahasiswa/jadwal-semester-satu') }}">
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 1</span>
                 </button>
                 </a>
-                <a href="file/Semester3.pdf" target="_blank">
+                <a href="{{ url('/mahasiswa/jadwal-semester-tiga') }}">
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 3</span>
                 </button>
                 </a>
-                <a href="file/Semester5.pdf" target="_blank">
+                <a href="{{ url('/mahasiswa/jadwal-semester-lima') }}">
                 <button class="icon-button">
                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
                     <span class="button-text">Semester 5</span>

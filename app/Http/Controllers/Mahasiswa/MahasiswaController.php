@@ -15,6 +15,15 @@ class MahasiswaController extends Controller
     public function jadwal(){
         return view('mahasiswa.jadwal');
     }
+    public function jadwalSemesterSatu(){
+        return view('mahasiswa.jadwalSemesterSatu');
+    }
+    public function jadwalSemesterTiga(){
+        return view('mahasiswa.jadwalSemesterTiga');
+    }
+    public function jadwalSemesterLima(){
+        return view('mahasiswa.jadwalSemesterLima');
+    }
     public function rekap(){
         return view('mahasiswa.rekap');
     }

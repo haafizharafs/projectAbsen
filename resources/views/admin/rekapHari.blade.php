@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     <link rel="stylesheet" href="{{ asset('/') }}/css/styleMhs.css" />
@@ -24,24 +25,42 @@
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
+                <a href="{{ url('/admin/dashboard') }}"
+                class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-home me-3"></i>Dashboard</a>
+            <a href="{{ url('/admin/pilih') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-user-plus me-3"></i>Buat Akun</a>
+            <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
+                onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>
+                Jadwal <i class=" fa fa-caret-down"></i>
+            </button>
+            <div id="demoAcc" class=" d-none   ">
+                <a href="#" class=" d-flex flex-column w3-bar-item w3-button text-white">Jadwal</a>
+                <a href="{{ url('/admin/mata-kuliah') }}"
+                    class=" d-flex flex-column w3-bar-item w3-button text-white">Mata Kuliah</a>
+                <a href="{{ url('/admin/kelas') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Kelas</a>
+                <a href="{{ url('/admin/semester') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Semester</a>
+                <a href="{{ url('/admin/hari') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Hari</a>
+                <a href="{{ url('/admin/jam') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Jam</a>
+                <a href="{{ url('/admin/ruang') }}"
+                    class="d-flex flex-column w3-bar-item w3-button text-white">Ruang</a>
+            </div>
+            <a href="{{ url('/admin/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
 
-                <!--form untuk logout-->
-                <form id="logout-form" action="{{ route('logout') }}" method="post">
-                        @csrf
-                </form>
-                <!--tombol logout yang mengakses form logout-->
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                    class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
+            <!--form untuk logout-->
+            <form id="logout-form" action="{{ route('logout') }}" method="post">
+                @csrf
+            </form>
+            <!--tombol logout yang mengakses form logout-->
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                    class="fas fa-power-off me-2"></i>Logout</a>
             </div>
         </div>
 
@@ -70,7 +89,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                                        <i class="fas fa-user me-2"></i>&nbsp &nbsp &nbsp &nbsp{{ Auth::user()->name }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -82,19 +101,19 @@
                     </nav>
                     <div class="container-2">
                         <div class="button-container-2">
-                            <a href="{{ url('/mahasiswa/rekap-hari') }}">
+                            <a href="{{ url('/admin/rekap-hari') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perhari</span>
                                 </button>
                             </a>
-                            <a href="{{ url('/mahasiswa/rekap-minggu') }}">
+                            <a href="{{ url('/admin/rekap-minggu') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Perminggu</span>
                                 </button>
                             </a>
-                            <a href="{{ url('/mahasiswa/rekap-semester') }}">
+                            <a href="{{ url('/admin/rekap-semester') }}">
                                 <button class="icon-button1" id="myButton">
                                 <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 1" width="50" height="50">
                                 <span class="button-text">Persemester</span>
@@ -163,6 +182,7 @@
 
 
     <script src="{{ asset('/') }}/js/main.js"></script>
+    <script src="{{ asset('/') }}/js/mainAdm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script>
@@ -190,6 +210,32 @@
             myButton.style.border = "2px solid #0056b3";
         });
 
+    </script>
+    {{-- toogle --}}
+    <script>
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-green";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-green", "");
+            }
+        }
+
+        function myDropFunc() {
+            var x = document.getElementById("demoDrop");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-green";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-green", "");
+            }
+        }
     </script>
 </body>
 

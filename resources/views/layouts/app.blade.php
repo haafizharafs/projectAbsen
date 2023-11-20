@@ -54,14 +54,14 @@
                             <a href="{{ url('/admin/ruang') }}"
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Ruang</a>
                         </div>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                                class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
+                        <a href="{{ url('/admin/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 
                     @role('dosen')
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        <a href="{{ url('/dosen/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/dosen/verifikasi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-check-circle me-3"></i>Verifikasi</a>
                         <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
                             onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>

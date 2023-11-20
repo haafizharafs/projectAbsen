@@ -76,13 +76,13 @@
         <div class="email">
             <div class="sender">Nama Akun</div>
             <a class="document-link" href="link-ke-file-dokumen.docx" target="_blank">Buka File Dokumen</a>
-            <div class="timestamp">12:30 PM, October 26, 2023</div>     
-        </div>      
+            <div class="timestamp">12:30 PM, October 26, 2023</div>
+        </div>
         Pesan terbaru akan masuk
         <a class="verification-button" href="#">Verifikasi</a>
     </div>
 </div>
-            
+
 </div>
 
     <!-- /#page-content-wrapper -->

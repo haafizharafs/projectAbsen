@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    $hitungMahasiswa = count($data['mahasiswa']);
+    $hitungDosen = count($data['dosen']);
+@endphp
     <div class="container-fluid px-4">
             <!--COUNTER-->
         <section id="counts" class="counts">
@@ -9,13 +13,13 @@
                 <div class="row counters">
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="532"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ $hitungMahasiswa }}"
                             data-purecounter-duration="1" class="purecounter"></span>
                         <p>Mahasiswa</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="{{ $hitungDosen }}" data-purecounter-duration="1"
                             class="purecounter"></span>
                         <p>Dosen</p>
                     </div>
