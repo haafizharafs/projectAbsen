@@ -35,16 +35,17 @@ class MataKuliahController extends Controller
 
     public function editMataKuliah($id)
     {
-        $mataKuliah = MataKuliah::where('id', $id)->first();
-        return view('admin.matakuliah.editMataKuliah', compact('mataKuliah'));
+        $data['mataKuliah'] = MataKuliah::where('id', $id)->first();
+        $data['semester'] = Semester::all();
+        return view('admin.matakuliah.editMataKuliah', compact('data'));
     }
 
     public function updateMataKuliah(Request $request, $id)
     {
-        $data['mataKuliah'] = MataKuliah::where('id', $id)->first();
-        $data['mataKuliah']->nama = $request->nama;
-        $data['mataKuliah']->semester_id = $request->semester;
-        $data['mataKuliah']->save();
+        $mataKuliah = MataKuliah::where('id', $id)->first();
+        $semester = Semester::where('id', $id)->first();
+        $mataKuliah->nama = $request->nama;
+        $mataKuliah->save();
         return redirect()->route('admin.listMataKuliah');
     }
 
