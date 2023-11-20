@@ -80,6 +80,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/kelas', [KelasController::class, 'listKelas'])->name('admin.listKelas');
     Route::post('/kelas/simpan', [KelasController::class, 'saveKelas'])->name('admin.saveKelas');
     Route::post('/kelas/hapus/{id}', [KelasController::class, 'deleteKelas'])->name('admin.deleteKelas');
+    Route::get('/kelas/edit/{id}', [KelasController::class, 'editKelas'])->name('admin.editKelas');
+    Route::post('/kelas/update/{id}', [KelasController::class, 'updateKelas'])->name('admin.updateKelas');
 
     //SEMESTER
     Route::get('/semester', [SemesterController::class, 'listSemester'])->name('admin.listSemester');

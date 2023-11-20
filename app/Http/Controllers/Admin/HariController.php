@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 
 class HariController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function listHari()
     {
         $hari = Hari::all();
@@ -26,20 +24,12 @@ class HariController extends Controller
         return redirect()->back();
     }
 
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function editHari($id)
     {
         $hari = Hari::where('id', $id)->first();
         return view('admin.hari.editHari', compact('hari'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function updateHari(Request $request, $id)
     {
         $hari = Hari::where('id', $id)->first();
