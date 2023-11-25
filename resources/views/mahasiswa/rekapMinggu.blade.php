@@ -24,13 +24,17 @@
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/dashboard') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/presensi') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/jadwal') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ url('/mahasiswa/rekap') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
 
                 <!--form untuk logout-->
@@ -49,7 +53,7 @@
 
         <!-- Page Content -->
 
-         <div id="page-content-wrapper">
+        <div id="page-content-wrapper">
 
             <div class="container-fluid px-4">
 
@@ -68,8 +72,9 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle second-text fw-bold" href="#"
+                                        id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -84,20 +89,23 @@
                         <div class="button-container-2">
                             <a href="{{ url('/mahasiswa/rekap-hari') }}">
                                 <button class="icon-button1" id="myButton">
-                                <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1" width="50" height="50">
-                                <span class="button-text">Perhari</span>
+                                    <img class="icon" src="{{ asset('/') }}/images/perhari.png" alt="Button 1"
+                                        width="50" height="50">
+                                    <span class="button-text">Perhari</span>
                                 </button>
                             </a>
                             <a href="{{ url('/mahasiswa/rekap-minggu') }}">
                                 <button class="icon-button1" id="myButton">
-                                <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1" width="50" height="50">
-                                <span class="button-text">Perminggu</span>
+                                    <img class="icon" src="{{ asset('/') }}/images/perminggu.png" alt="Button 1"
+                                        width="50" height="50">
+                                    <span class="button-text">Perminggu</span>
                                 </button>
                             </a>
                             <a href="{{ url('/mahasiswa/rekap-semester') }}">
                                 <button class="icon-button1" id="myButton">
-                                <img class="icon" src="{{ asset('/') }}/images/persemester.png" alt="Button 1" width="50" height="50">
-                                <span class="button-text">Persemester</span>
+                                    <img class="icon" src="{{ asset('/') }}/images/persemester.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Persemester</span>
                                 </button>
                             </a>
                         </div>
@@ -127,8 +135,8 @@
                             </tr>
                             <tr>
                                 <td>01</td>
-                                <td>Fitri</td>
-                                <td>32021170</td>
+                                <td>Haafizhar Al Fathan Syauqi</td>
+                                <td>3202116059</td>
                                 <td>-</td>
                                 <td>1</td>
                                 <td>2</td>
@@ -142,8 +150,8 @@
                             </tr>
                             <tr>
                                 <td>02</td>
-                                <td>Rehan</td>
-                                <td>32021111</td>
+                                <td>VENDY PAULUS PRATAMA</td>
+                                <td>3202116101</td>
                                 <td>1</td>
                                 <td>1</td>
                                 <td>2</td>
@@ -157,39 +165,39 @@
                             </tr>
                         </table>
                     </div>
-            </div>
+                </div>
 
-    <!-- /#page-content-wrapper -->
+                <!-- /#page-content-wrapper -->
 
 
-    <script src="{{ asset('/') }}/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-    <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+                <script src="{{ asset('/') }}/js/main.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+                <script>
+                    var el = document.getElementById("wrapper");
+                    var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
+                    toggleButton.onclick = function() {
+                        el.classList.toggle("toggled");
+                    };
 
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle1");
+                    var el = document.getElementById("wrapper");
+                    var toggleButton = document.getElementById("menu-toggle1");
 
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
+                    toggleButton.onclick = function() {
+                        el.classList.toggle("toggled");
+                    };
 
-        // script button
-        var myButton = document.getElementById("myButton");
-        myButton.addEventListener("mousedown", function() {
-            yButton.style.border = "2px solid #0056b3";
-        });
+                    // script button
+                    var myButton = document.getElementById("myButton");
+                    myButton.addEventListener("mousedown", function() {
+                        yButton.style.border = "2px solid #0056b3";
+                    });
 
-        myButton.addEventListener("mouseup", function() {
-            myButton.style.border = "2px solid #0056b3";
-        });
-    </script>
+                    myButton.addEventListener("mouseup", function() {
+                        myButton.style.border = "2px solid #0056b3";
+                    });
+                </script>
 </body>
 
 </html>

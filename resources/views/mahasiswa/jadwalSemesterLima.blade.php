@@ -24,18 +24,22 @@
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/dashboard') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-home me-3"></i>Dashboard</a>
+                <a href="{{ url('/mahasiswa/presensi') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                <a href="{{ url('/mahasiswa/jadwal') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ url('/mahasiswa/rekap') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
 
                 <!--form untuk logout-->
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
-                        @csrf
+                    @csrf
                 </form>
                 <!--tombol logout yang mengakses form logout-->
                 <a href="{{ route('logout') }}"
@@ -47,144 +51,148 @@
 
         <!-- /#sidebar-wrapper -->
 
-         <!-- Page Content -->
+        <!-- Page Content -->
 
-         <div id="page-content-wrapper">
+        <div id="page-content-wrapper">
 
             <div class="container-fluid px-4">
 
-                    <!--jadwal per semester-->
-     <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-            <div class="d-flex align-items-center">
-                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                <h2 class="fs-2 m-0">Jadwal</h2>
+                <!--jadwal per semester-->
+                <div id="page-content-wrapper">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                            <h2 class="fs-2 m-0">Jadwal</h2>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle second-text fw-bold" href="#"
+                                        id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="container1">
+                        <div class="button-containerr">
+                            <a href="{{ url('/mahasiswa/jadwal-semester-satu') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 1</span>
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/jadwal-semester-tiga') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 3</span>
+                                </button>
+                            </a>
+                            <a href="{{ url('/mahasiswa/jadwal-semester-lima') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 5</span>
+                                </button>
+                            </a>
+                        </div>
+
+                        <h3>JADWAL PERKULIAHAN SEMESTER 5</h3>
+                        <!-- Table -->
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Slot</th>
+                                    <th>Durasi Waktu</th>
+                                    <th>Mata Kuliah</th>
+                                    <th>Dosen</th>
+                                    <th>Ruang</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Senin</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Kewirausahaan</td>
+                                    <td>Yasir Arafat</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+                                <tr>
+                                    <td>Selasa</td>
+                                    <td>4,5,6,7,8,9,10,11</td>
+                                    <td>09:45 - 18:00</td>
+                                    <td>PBL</td>
+                                    <td>Lindung Siswanto</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+                                <tr>
+                                    <td>Rabu</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Etika Profesi</td>
+                                    <td>Suharsono</td>
+                                    <td>Ruang TI-3</td>
+                                </tr>
+                                <tr>
+                                    <td>Kamis</td>
+                                    <td>1,2,3,4,5,6,7</td>
+                                    <td>07:00 - 13:50</td>
+                                    <td>Jaringan Komputer Lanjut</td>
+                                    <td>Tri Bowo Atmojo</td>
+                                    <td>Ruang TI-11</td>
+                                </tr>
+                                <tr>
+                                    <td>Jumat</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Rekayasa Perangkat Lunak</td>
+                                    <td>Ferry Faisal</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container1">
-            <div class="button-containerr">
-                <a href="{{ url('/mahasiswa/jadwal-semester-satu') }}">
-                    <button class="icon-button">
-                        <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
-                        <span class="button-text">Semester 1</span>
-                    </button>
-                    </a>
-                    <a href="{{ url('/mahasiswa/jadwal-semester-tiga') }}">
-                    <button class="icon-button">
-                        <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
-                        <span class="button-text">Semester 3</span>
-                    </button>
-                    </a>
-                    <a href="{{ url('/mahasiswa/jadwal-semester-lima') }}">
-                    <button class="icon-button">
-                        <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png" alt="Button 1" width="50" height="50">
-                        <span class="button-text">Semester 5</span>
-                    </button>
-                    </a>
-            </div>
 
-            <h3>JADWAL PERKULIAHAN SEMESTER 5</h3>
-                <!-- Table -->
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Hari</th>
-                                <th>Slot</th>
-                                <th>Durasi Waktu</th>
-                                <th>Mata Kuliah</th>
-                                <th>Dosen</th>
-                                <th>Ruang</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Senin</td>
-                                <td>1</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Matematika Dasar</td>
-                                <td>Dr. John Doe</td>
-                                <td>Ruang 101</td>
-                            </tr>
-                            <tr>
-                                <td>Selasa</td>
-                                <td>2</td>
-                                <td>10:00 - 12:00</td>
-                                <td>Fisika Dasar</td>
-                                <td>Prof. Jane Smith</td>
-                                <td>Ruang 102</td>
-                            </tr>
-                            <tr>
-                                <td>Rabu</td>
-                                <td>1</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Matematika Dasar</td>
-                                <td>Dr. John Doe</td>
-                                <td>Ruang 101</td>
-                            </tr>
-                            <tr>
-                                <td>Kamis</td>
-                                <td>2</td>
-                                <td>10:00 - 12:00</td>
-                                <td>Fisika Dasar</td>
-                                <td>Prof. Jane Smith</td>
-                                <td>Ruang 102</td>
-                            </tr>
-                            <tr>
-                                <td>Jumat</td>
-                                <td>2</td>
-                                <td>10:00 - 12:00</td>
-                                <td>Fisika Dasar</td>
-                                <td>Prof. Jane Smith</td>
-                                <td>Ruang 102</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-        </div>
-    </div>
-
-</div>
-
-    <!-- /#page-content-wrapper -->
+            <!-- /#page-content-wrapper -->
 
 
-    <script src="{{ asset('/') }}/js/mainMhs.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-    <script>
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle");
+            <script src="{{ asset('/') }}/js/mainMhs.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+            <script>
+                var el = document.getElementById("wrapper");
+                var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
+                toggleButton.onclick = function() {
+                    el.classList.toggle("toggled");
+                };
 
-        var el = document.getElementById("wrapper");
-        var toggleButton = document.getElementById("menu-toggle1");
+                var el = document.getElementById("wrapper");
+                var toggleButton = document.getElementById("menu-toggle1");
 
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled");
-        };
-    </script>
+                toggleButton.onclick = function() {
+                    el.classList.toggle("toggled");
+                };
+            </script>
 </body>
 
 </html>
