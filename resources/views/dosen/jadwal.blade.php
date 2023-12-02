@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <link rel="stylesheet" href="{{ asset('/') }}/css/styleDsn.css" />
+    <link rel="stylesheet" href="{{ asset('/') }}/css/styleMhs.css" />
     <title>SiHadir</title>
     <link rel="shortcut icon" href="{{ asset('/') }}/images/sihadir.png">
 </head>
@@ -29,14 +28,15 @@
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
                 <a href="{{ url('/dosen/verifikasi') }}"
-                    class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-check-circle me-3"></i>Verifikasi</a>
                 <a href="{{ url('/dosen/jadwal') }}"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"><i
+                    class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-file-alt me-3"></i>Jadwal</a>
                 <a href="{{ url('/dosen/rekap') }}"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
+
                 <!--form untuk logout-->
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
                     @csrf
@@ -57,12 +57,12 @@
 
             <div class="container-fluid px-4">
 
-                <!--kotak masuk verifikasi-->
+                <!--jadwal per semester-->
                 <div id="page-content-wrapper">
                     <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                         <div class="d-flex align-items-center">
                             <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                            <h2 class="fs-2 m-0">Verifikasi</h2>
+                            <h2 class="fs-2 m-0">Jadwal</h2>
                         </div>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -75,26 +75,40 @@
                                     <a class="nav-link dropdown-toggle second-text fw-bold" href="#"
                                         id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <i class="fas fa-user me-2"></i>&nbsp &nbsp &nbsp &nbsp
-                                        &nbsp{{ Auth::user()->dosen->nama }}
+                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->dosen->nama }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </nav>
-                    <div id="inbox">
-                        <div class="email">
-                            <div class="sender">Nama Akun</div>
-                            <a class="document-link" href="link-ke-file-dokumen.docx" target="_blank">Buka File
-                                Dokumen</a>
-                            <div class="timestamp">12:30 PM, October 26, 2023</div>
+                    <div class="container1">
+                        <div class="button-containerr">
+                            <a href="{{ url('/dosen/jadwal-semester-satu') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 1</span>
+                                </button>
+                            </a>
+                            <a href="{{ url('/dosen/jadwal-semester-tiga') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 3</span>
+                                </button>
+                            </a>
+                            <a href="{{ url('/dosen/jadwal-semester-lima') }}">
+                                <button class="icon-button">
+                                    <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
+                                        alt="Button 1" width="50" height="50">
+                                    <span class="button-text">Semester 5</span>
+                                </button>
+                            </a>
                         </div>
-                        Pesan terbaru akan masuk
-                        <a class="verification-button" href="#">Verifikasi</a>
                     </div>
                 </div>
 
@@ -103,7 +117,7 @@
             <!-- /#page-content-wrapper -->
 
 
-            <script src="{{ asset('/') }}/js/mainDsn.js"></script>
+            <script src="{{ asset('/') }}/js/mainMhs.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
             <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
             <script>
@@ -120,32 +134,6 @@
                 toggleButton.onclick = function() {
                     el.classList.toggle("toggled");
                 };
-            </script>
-            {{-- toogle --}}
-            <script>
-                function myAccFunc() {
-                    var x = document.getElementById("demoAcc");
-                    if (x.className.indexOf("w3-show") == -1) {
-                        x.className += " w3-show";
-                        x.previousElementSibling.className += " w3-green";
-                    } else {
-                        x.className = x.className.replace(" w3-show", "");
-                        x.previousElementSibling.className =
-                            x.previousElementSibling.className.replace(" w3-green", "");
-                    }
-                }
-
-                function myDropFunc() {
-                    var x = document.getElementById("demoDrop");
-                    if (x.className.indexOf("w3-show") == -1) {
-                        x.className += " w3-show";
-                        x.previousElementSibling.className += " w3-green";
-                    } else {
-                        x.className = x.className.replace(" w3-show", "");
-                        x.previousElementSibling.className =
-                            x.previousElementSibling.className.replace(" w3-green", "");
-                    }
-                }
             </script>
 </body>
 

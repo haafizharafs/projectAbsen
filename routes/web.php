@@ -135,6 +135,22 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dosen'])->name('dosen.dashboard');
     //enter verifikasi
     Route::get('/verifikasi', [DosenController::class, 'verifikasi'])->name('dosen.verifikasi');
+    //enter jadwal
+    Route::get('/jadwal', [DosenController::class, 'jadwal'])->name('dosen.jadwal');
+    //enter jadwalS1
+    Route::get('/jadwal-semester-satu', [DosenController::class, 'jadwalSemesterSatu'])->name('dosen.jadwal-semester-satu');
+    //enter jadwalS3
+    Route::get('/jadwal-semester-tiga', [DosenController::class, 'jadwalSemesterTiga'])->name('dosen.jadwal-semester-tiga');
+    //enter jadwalS5
+    Route::get('/jadwal-semester-lima', [DosenController::class, 'jadwalSemesterLima'])->name('dosen.jadwal-semester-lima');
+    //enter rekap
+    Route::get('/rekap', [DosenController::class, 'rekap'])->name('dosen.rekap');
+    //enter rekapHari
+    Route::get('/rekap-hari', [DosenController::class, 'rekapHari'])->name('dosen.rekapHari');
+    //enter rekapMinggu
+    Route::get('/rekap-minggu', [DosenController::class, 'rekapMinggu'])->name('dosen.rekapMinggu');
+    //enter rekapSemester
+    Route::get('/rekap-semester', [DosenController::class, 'rekapSemester'])->name('dosen.rekapSemester');
 });
 
 //middleware prefix mahasiswa

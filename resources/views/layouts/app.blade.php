@@ -33,7 +33,8 @@
                         <a href="{{ url('/admin/dashboard') }}"
                             class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="{{ url('/admin/pilih') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/admin/pilih') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-user-plus me-3"></i>Buat Akun</a>
                         <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
                             onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>
@@ -54,39 +55,38 @@
                             <a href="{{ url('/admin/ruang') }}"
                                 class="d-flex flex-column w3-bar-item w3-button text-white">Ruang</a>
                         </div>
-                        <a href="{{ url('/admin/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                            class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
+                        <a href="{{ url('/admin/rekap') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                                class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 
                     @role('dosen')
-                        <a href="{{ url('/dosen/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        <a href="{{ url('/dosen/dashboard') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="{{ url('/dosen/verifikasi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/dosen/verifikasi') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-check-circle me-3"></i>Verifikasi</a>
-                        <button class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"
-                            onclick="myAccFunc()"><i class="fas fa-file-alt me-3"></i>
-                            Jadwal <i class=" fa fa-caret-down"></i>
-                        </button>
-                        <div id="demoAcc" class=" d-none   ">
-                            <a href="#" class=" d-flex flex-column w3-bar-item w3-button">Jadwal</a>
-                            <a href="#" class="d-flex flex-column w3-bar-item w3-button">Kelas</a>
-                            <a href="#" class="d-flex flex-column w3-bar-item w3-button">Semester</a>
-                            <a href="#" class="d-flex flex-column w3-bar-item w3-button">Hari</a>
-                            <a href="#" class="d-flex flex-column w3-bar-item w3-button">Jam</a>
-
-                        </div>
-                        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/dosen/jadwal') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold d-block"><i
+                                class="fas fa-file-alt me-3"></i>Jadwal</a>
+                        <a href="{{ url('/dosen/rekap') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 
                     @role('mahasiswa')
-                        <a href="{{ url('/mahasiswa/dashboard') }}" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        <a href="{{ url('/mahasiswa/dashboard') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text active"><i
                                 class="fas fa-home me-3"></i>Dashboard</a>
-                        <a href="{{ url('/mahasiswa/presensi') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/presensi') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-list-alt me-3"></i>Presensi</a>
-                        <a href="{{ url('/mahasiswa/jadwal') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/jadwal') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-file-alt me-3"></i> Jadwal</a>
-                        <a href="{{ url('/mahasiswa/rekap') }}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        <a href="{{ url('/mahasiswa/rekap') }}"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                                 class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
                     @endrole
 

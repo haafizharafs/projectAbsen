@@ -24,16 +24,16 @@
 
             </div>
             <div class="list-group list-group-flush my-3">
-                <a href="{{ url('/mahasiswa/dashboard') }}"
+                <a href="{{ url('/dosen/dashboard') }}"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-home me-3"></i>Dashboard</a>
-                <a href="{{ url('/mahasiswa/presensi') }}"
+                <a href="{{ url('/dosen/verifikasi') }}"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-list-alt me-3"></i>Presensi</a>
-                <a href="{{ url('/mahasiswa/jadwal') }}"
-                    class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-file-alt me-3"></i> Jadwal</a>
-                <a href="{{ url('/mahasiswa/rekap') }}"
+                        class="fas fa-check-circle me-3"></i>Verifikasi</a>
+                <a href="{{ url('/dosen/jadwal') }}"
+                    class="list-group-item list-group-item-action bg-transparent second-text active "><i
+                        class="fas fa-file-alt me-3"></i>Jadwal</a>
+                <a href="{{ url('/dosen/rekap') }}"
                     class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar-alt me-3"></i> Data Rekap</a>
 
@@ -75,7 +75,7 @@
                                     <a class="nav-link dropdown-toggle second-text fw-bold" href="#"
                                         id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->mahasiswa->nama }}
+                                        <i class="fas fa-user me-2"></i>&nbsp{{ Auth::user()->dosen->nama }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -87,21 +87,21 @@
                     </nav>
                     <div class="container1">
                         <div class="button-containerr">
-                            <a href="{{ url('/mahasiswa/jadwal-semester-satu') }}">
+                            <a href="{{ url('/dosen/jadwal-semester-satu') }}">
                                 <button class="icon-button">
                                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
                                         alt="Button 1" width="50" height="50">
                                     <span class="button-text">Semester 1</span>
                                 </button>
                             </a>
-                            <a href="{{ url('/mahasiswa/jadwal-semester-tiga') }}">
+                            <a href="{{ url('/dosen/jadwal-semester-tiga') }}">
                                 <button class="icon-button">
                                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
                                         alt="Button 1" width="50" height="50">
                                     <span class="button-text">Semester 3</span>
                                 </button>
                             </a>
-                            <a href="{{ url('/mahasiswa/jadwal-semester-lima') }}">
+                            <a href="{{ url('/dosen/jadwal-semester-lima') }}">
                                 <button class="icon-button">
                                     <img class="icon" src="{{ asset('/') }}/images/calendar_1253979.png"
                                         alt="Button 1" width="50" height="50">
@@ -109,6 +109,64 @@
                                 </button>
                             </a>
                         </div>
+
+                        <h3>JADWAL PERKULIAHAN SEMESTER 5</h3>
+                        <!-- Table -->
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Slot</th>
+                                    <th>Durasi Waktu</th>
+                                    <th>Mata Kuliah</th>
+                                    <th>Dosen</th>
+                                    <th>Ruang</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Senin</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Kewirausahaan</td>
+                                    <td>Yasir Arafat</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+                                <tr>
+                                    <td>Selasa</td>
+                                    <td>4,5,6,7,8,9,10,11</td>
+                                    <td>09:45 - 18:00</td>
+                                    <td>PBL</td>
+                                    <td>Lindung Siswanto</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+                                <tr>
+                                    <td>Rabu</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Etika Profesi</td>
+                                    <td>Suharsono</td>
+                                    <td>Ruang TI-3</td>
+                                </tr>
+                                <tr>
+                                    <td>Kamis</td>
+                                    <td>1,2,3,4,5,6,7</td>
+                                    <td>07:00 - 13:50</td>
+                                    <td>Jaringan Komputer Lanjut</td>
+                                    <td>Tri Bowo Atmojo</td>
+                                    <td>Ruang TI-11</td>
+                                </tr>
+                                <tr>
+                                    <td>Jumat</td>
+                                    <td>1,2,3,4</td>
+                                    <td>07:00 - 10:35</td>
+                                    <td>Rekayasa Perangkat Lunak</td>
+                                    <td>Ferry Faisal</td>
+                                    <td>Ruang TI-12</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
