@@ -11,6 +11,6 @@ class MataKuliah extends Model
     protected $guarded = [];
 
     public function semester(){
-        return $this->belongsTo(Semester::Class);
+        return $this->belongsToMany(Semester::Class);
     }
 }
